@@ -3,8 +3,8 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   FileProtectOutlined,
-  // TagsOutlined,
-  // SettingOutlined,
+  TagsOutlined,
+  SettingOutlined,
   // StockOutlined,
   // NotificationOutlined,
   // TagOutlined,
@@ -56,7 +56,18 @@ const App: React.FC = () => {
       content: "Product",
       path: "/layout",
       icon: FileProtectOutlined,
+    },
+    {
+      content: "Contract",
+      path: "/layout/contract",
+      icon: SettingOutlined,
+    },
+    {
+      content: "Exchange",
+      path: "/layout/exchange",
+      icon: TagsOutlined,
     }
+
   ];
 
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);

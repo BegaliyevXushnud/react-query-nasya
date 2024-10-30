@@ -10,6 +10,7 @@ export default defineConfig({
       {find: "@component", replacement:"/src/component"},
       {find: "@modules", replacement:"/src/modules"},
       {find: "@api", replacement:"/src/api"},
+      {find: "@utils", replacement:"/src/utils/notification"},
     ]
   }
 })

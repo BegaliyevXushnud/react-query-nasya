@@ -13,4 +13,10 @@ const SignUp = loadable(() => import('./auth/pages/sign_in'), {
   const Product = loadable(() => import('./product/pages'), {
     fallback: <Loading />,  
   });
-export {SignIn,SignUp,Layout,Product};
+  const Contract = loadable(() => import('./contract/pages'), {
+    fallback: <Loading />,  
+  });
+  const Exchange = loadable(() => import('./exshange/pages'), {
+    fallback: <Loading />,  
+  });
+export {SignIn,SignUp,Layout,Product,Contract, Exchange};
