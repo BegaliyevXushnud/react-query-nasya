@@ -10,3 +10,8 @@ export interface Contract {
   passport_image: "string",
   status: string
 }
+// types.ts faylida yoki hook'ni import qilgan faylda
+export interface ContractData {
+  all_contracts: any[]; // Har bir contract obyekti turini belgilash mumkin
+  count: number;
+}

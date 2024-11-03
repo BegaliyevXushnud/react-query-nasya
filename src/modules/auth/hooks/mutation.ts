@@ -19,7 +19,7 @@ export function useSignInMutation() {
             
             return response;
         },
-        onSuccess: (response) => {
+        onSuccess: (response:any) => {
            
             const access_token = response.data.AccessToken;
 
@@ -42,7 +42,7 @@ export function useSignUpMutation(){
     const navigate = useNavigate();
     return useMutation({
         mutationFn:async(data:SignUp) => {
-            const response = await signUp(data);
+            const response:any = await signUp(data);
             if(response.status !== 201){
                 const errorMessage = response.data?.message || 'Registration failed';
                 Notification('error', 'Sign Up Failed', 'Please check your credentials.');

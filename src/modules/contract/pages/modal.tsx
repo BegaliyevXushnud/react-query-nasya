@@ -72,7 +72,7 @@ const handleSubmit = (values:any)=>{
 const handleFileChange = async (info:any) => {
     const selectedFile = info.file.originFileObj || info.file;
     try{
-        const uploadedFileResponse = await uploadFile(selectedFile);
+        const uploadedFileResponse:any = await uploadFile(selectedFile);
         const uploadedImageUrl = uploadedFileResponse.made_url;
         setPassport_image(uploadedImageUrl);
         message.success("File uploaded successfully!")

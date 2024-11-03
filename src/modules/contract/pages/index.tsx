@@ -18,7 +18,7 @@ const Index = () => {
     page: 1,
     limit: 5,
   });
-  const { all_contracts, count } = useContract(params)?.data || {};
+  const { all_contracts, count }:any = useContract(params)?.data || {};
   const { mutate } = useDeleteContract();
 
   useEffect(() => {

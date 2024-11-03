@@ -9,8 +9,8 @@ export  function useCreateProduct(){
     const queryClient = useQueryClient();
     return useMutation({
         mutationFn:(data:FormData) => createProduct(data),
-        onSuccess:(response) => {
-            Notification("success",response?.message)
+        onSuccess:(response:any) => {
+            Notification("success",response.message)
         },
         onSettled:async(_,error) => {
             if(error){
@@ -27,7 +27,7 @@ export function useUpdateProduct(){
     const queryClient = useQueryClient()
     return useMutation({
         mutationFn:(data:Product) => UpdateProduct(data),
-        onSuccess:(response) => {
+        onSuccess:(response:any) => {
             Notification("success", response.message)
         },
         onSettled:async(_,error, variable)=>{
@@ -44,7 +44,7 @@ export function useDeleteProduct() {
     const queryClient = useQueryClient()
     return useMutation({
         mutationFn: (id: string | number) => deleteProduct(id),
-        onSuccess: (response) => {
+        onSuccess: (response:any) => {
             Notification("success", response.message)
         },
         onSettled: async (_, error) => {

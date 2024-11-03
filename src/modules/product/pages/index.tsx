@@ -18,7 +18,10 @@ const Index = () => {
     page: 1,
     limit: 5,
   });
-  const { all_products, count } = useProduct(params)?.data || {};
+  
+  
+  const { all_products, count }:any = useProduct(params)?.data || {};
+
  const {mutate} =  useDeleteProduct()
 
  useEffect(() => {

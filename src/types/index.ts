@@ -1,8 +1,8 @@
 export interface ParamsType {
-    id?: string;    // Mahsulot ID
-    search?: string; // Qidiruv so'zi
-    limit?: number; // Olingan mahsulotlar soni
-    page?: number;  // Sahifa raqami
+    id?: string;    
+    search?: string; 
+    limit?: number; 
+    page?: number; 
   }
   export interface ModalPropType {
     id?:number | string
@@ -10,3 +10,8 @@ export interface ParamsType {
     update:any,
     handleCancel: () => void,
   }
+  export interface ContractDataType {
+    all_contracts: any[]; // Adjust `any` to the specific type if available
+    count: number;
+  }
+  
