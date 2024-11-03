@@ -16,9 +16,8 @@ return response.data
 //============ Create ===============
 export const createProduct = async (data:FormData) => {
     const response = await axiosInstanse2.post("product/create", data);
-    return response?.data.all_products
+    return response?.data
 }
-
 // ======== Update =============
 export const UpdateProduct = async (data:Product) => {
     const { id } = data;

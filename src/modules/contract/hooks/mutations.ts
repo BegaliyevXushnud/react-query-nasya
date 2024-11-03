@@ -9,8 +9,10 @@ export  function useCreateContract(){
     const queryClient = useQueryClient();
     return useMutation({
         mutationFn:(data:FormData) => createContract(data),
-        onSuccess:(response) => {
-            Notification("success",response?.message)
+        onSuccess:(response:any) => {
+            
+            Notification("success",response.message)
+        
         },
         onSettled:async(_,error) => {
             if(error){
@@ -27,7 +29,7 @@ export function useUpdateContract(){
     const queryClient = useQueryClient()
     return useMutation({
         mutationFn:(data:Contract) => UpdateContract(data),
-        onSuccess:(response) => {
+        onSuccess:(response:any) => {
             Notification("success", response.message)
         },
         onSettled:async(_,error, variable)=>{
@@ -44,7 +46,7 @@ export function useDeleteContract() {
     const queryClient = useQueryClient()
     return useMutation({
         mutationFn: (id: string | number) => deleteContract(id),
-        onSuccess: (response) => {
+        onSuccess: (response:any) => {
             Notification("success", response.message)
         },
         onSettled: async (_, error) => {
