@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { useExchange } from "../hooks/queries";
+import { useTransaction } from "../hooks/queries";
 import { Table, ConfirmDelete, Search } from "@component";
 import { Button, Space, Tooltip } from "antd"; 
 import { EditOutlined } from "@ant-design/icons";
 import { useSearchParams } from "react-router-dom";
 import { ColumnsType } from "antd/es/table";
 import { TablePaginationConfig } from "antd/lib";
-import { useDeleteExshange } from "../hooks/mutations";
+import { useDeleteTransaction } from "../hooks/mutations";
 import Modal from './modal';
 
 const Index = () => {
@@ -18,8 +18,8 @@ const Index = () => {
     page: 1,
     limit: 5,
   });
-  const { all_exchanges, count }:any = useExchange(params)?.data || {};
-  const { mutate } = useDeleteExshange();
+  const { all_transactions, count }:any = useTransaction(params)?.data || {};
+  const { mutate } = useDeleteTransaction();
 
   useEffect(() => {
     const pageFromParams = searchParams.get("page") || "1";
@@ -60,10 +60,6 @@ const Index = () => {
       },
     },
     {
-      title: "Amount",
-      dataIndex: "amount",
-    },
-    {
       title: "Contract Id",
       dataIndex: "contract_id",
     },
@@ -72,26 +68,17 @@ const Index = () => {
       dataIndex: "created_at",
     },
     {
-      title: "Id",
-      dataIndex: "id",
+      title: "Duration",
+      dataIndex: "duration",
     },
+    {
+        title: "Id",
+        dataIndex: "id",
+      },
     {
       title: "Price",
       dataIndex: "price",
     },
-    {
-      title: "Product Id",
-      dataIndex: "product_id",
-    },
-    {
-      title: "Status",
-      dataIndex: "status",
-    },
-    {
-      title: "Updated At",
-      dataIndex: "updated_at",
-    },
-    
     {
       title: "Action",
       key: "action",
@@ -120,7 +107,7 @@ const Index = () => {
         </Button>
       </div>
       <Table
-        data={all_exchanges}
+        data={all_transactions}
         columns={columns}
         pagination={{
           current: params.page,

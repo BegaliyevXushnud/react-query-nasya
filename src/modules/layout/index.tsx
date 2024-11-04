@@ -5,7 +5,7 @@ import {
   FileProtectOutlined,
   TagsOutlined,
   SettingOutlined,
-  // StockOutlined,
+  StockOutlined,
   // NotificationOutlined,
   // TagOutlined,
   // AppstoreOutlined,
@@ -66,6 +66,11 @@ const App: React.FC = () => {
       content: "Exchange",
       path: "/layout/exchange",
       icon: TagsOutlined,
+    },
+    {
+      content: "Transaction",
+      path: "/layout/transaction",
+      icon: StockOutlined,
     }
 
   ];

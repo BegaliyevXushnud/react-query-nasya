@@ -8,6 +8,7 @@ const Layout = loadable(() => import('../modules/layout'))
 const Product = loadable(() => import('../modules/product/pages'))
 const Exchange = loadable(() => import('../modules/exshange/pages'))
 const Contract = loadable(() => import('../modules/contract/pages'))
+const Transaction = loadable(() => import('../modules/transaction/pages'))
 
 
 const index = () => {
@@ -20,6 +21,7 @@ const index = () => {
                 <Route index element={<Product/>} />
                 <Route path="exchange" element={<Exchange/>} />
                 <Route path="contract" element={<Contract/>} />
+                <Route path="transaction" element={<Transaction/>} />
                 </Route>
                 <Route />
             </Route>

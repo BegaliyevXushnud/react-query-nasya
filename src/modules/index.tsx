@@ -19,4 +19,7 @@ const SignUp = loadable(() => import('./auth/pages/sign_in'), {
   const Exchange = loadable(() => import('./exshange/pages'), {
     fallback: <Loading />,  
   });
-export {SignIn,SignUp,Layout,Product,Contract, Exchange};
+  const Transaction = loadable(() => import('./transaction/pages'), {
+    fallback: <Loading />,  
+  });
+export {SignIn,SignUp,Layout,Product,Contract, Exchange,Transaction};
