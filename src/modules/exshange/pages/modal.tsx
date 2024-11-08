@@ -121,7 +121,7 @@ const ExchangeDrawer = ({ open, handleCancel, update }: any) => {
                 {all_products.length > 0 ? (
                   all_products.map((item: any) => (
                     <Select.Option key={item.id} value={item.id}>
-                      {item.name}
+                      {item.consumer_name}
                     </Select.Option>
                   ))
                 ) : (

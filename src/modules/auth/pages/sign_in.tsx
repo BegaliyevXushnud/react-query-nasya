@@ -4,7 +4,12 @@ import { useSignInMutation } from '../hooks/mutation';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { SignIn } from '../type';
 import "./index.css"
+import { removeAccessToken } from '../../../utils/token-server';
 const sign_in = () => {
+
+
+removeAccessToken()
+
     const { mutateAsync: signIn } = useSignInMutation();
     const handleSubmit = async (values:SignIn) => {
       console.log(values);
